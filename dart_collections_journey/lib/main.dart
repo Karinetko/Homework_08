@@ -1,7 +1,10 @@
 import 'dart:math';
 
+import 'package:dart_collections_journey/names.dart';
+
 void main() {
-  task_1();
+  //task_1();
+  task_2();
 }
 
 void task_1() {
@@ -46,5 +49,30 @@ void task_1() {
   }
   print('List of even numbers: $temp');
   print('List of even numbers length: ${temp.length}');
+  print('-----------------------');
+}
+
+void task_2() {
+  // Create two lists of Ukrainian names
+  final uniqueNames1 = Set.from(ukrainianNames1);
+  final uniqueNames2 = Set.from(ukrainianNames2);
+  print('Unique first list: ${uniqueNames1.length}');
+  print('Unique second list: ${uniqueNames2.length}');
+  print('-----------------------');
+
+  // Find common names
+  final commonNames = uniqueNames1.intersection(uniqueNames2);
+  print('Common names: $commonNames');
+  print('Number of common names: ${commonNames.length}');
+  print('-----------------------');
+
+  // Find unique names in each list
+  final uniqueInFirst = uniqueNames1.difference(uniqueNames2);
+  print('Unique names in first list: $uniqueInFirst');
+  print('-----------------------');
+
+  // Unique names in second list
+  final uniqueInSecond = uniqueNames2.difference(uniqueNames1);
+  print('Unique names in second list: $uniqueInSecond');
   print('-----------------------');
 }
