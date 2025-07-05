@@ -1,10 +1,12 @@
 import 'dart:math';
 
 import 'package:dart_collections_journey/names.dart';
+import 'package:word_generator/word_generator.dart';
 
 void main() {
   //task_1();
-  task_2();
+  //task_2();
+  task_3();
 }
 
 void task_1() {
@@ -75,4 +77,29 @@ void task_2() {
   final uniqueInSecond = uniqueNames2.difference(uniqueNames1);
   print('Unique names in second list: $uniqueInSecond');
   print('-----------------------');
+}
+
+void task_3() {
+  // Create a list of random words
+  final wordGenerator = WordGenerator();
+  List<String> nounsList = wordGenerator.randomNouns(50);
+  print(nounsList);
+  print('-----------------------');
+
+  // Print the list of nouns
+  final nounsMap = <String, int>{};
+  for (String word in nounsList) {
+    nounsMap[word] = word.length;
+  }
+  print('Nouns map: $nounsMap');
+  print('-----------------------');
+
+  // Print the length of each noun
+  final tempNouns = <String, int>{};
+  nounsMap.forEach((word, length) {
+    if (length % 2 == 0) {
+      tempNouns[word] = length;
+    }
+  });
+  print('Nouns with even length: $tempNouns');
 }
