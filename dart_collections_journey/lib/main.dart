@@ -6,7 +6,7 @@ import 'package:word_generator/word_generator.dart';
 void main() {
   //task_1();
   //task_2();
-  task_3();
+  // task_3();
 }
 
 void task_1() {
